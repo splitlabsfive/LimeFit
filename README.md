@@ -13,7 +13,7 @@ A dark-themed workout tracker for iOS / Android / web with a strong lime accent.
 ## Run locally
 
 ```bash
-npm ci --legacy-peer-deps   # lockfile is pinned; plain npm install hits a peer conflict
+npm ci                     # .npmrc sets legacy-peer-deps=true (needed by react-native 0.83.6 peer types)
 npm start                   # then press w for web, or a for Android
 npm run web
 npm run typecheck
