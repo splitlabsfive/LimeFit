@@ -13,11 +13,26 @@ A dark-themed workout tracker for iOS / Android / web with a strong lime accent.
 ## Run locally
 
 ```bash
-npm install
-npm start          # then press w for web, or a for Android
+npm ci                     # .npmrc sets legacy-peer-deps=true (needed by react-native 0.83.6 peer types)
+npm start                   # then press w for web, or a for Android
 npm run web
 npm run typecheck
 ```
+
+## See the app
+
+- **Browser (web)**: `npm start`, then press `w` — opens on `localhost:8081`. Or build a static bundle: `npx expo export --platform web` and serve `dist/`.
+- **Phone without building**: install the **Expo Go** app from Google Play, run `npm start` on your computer (same Wi-Fi), scan the QR code.
+
+## Build an APK
+
+```bash
+npm install -g eas-cli
+eas login                                        # free Expo account
+eas build -p android --profile preview           # eas.json -> buildType apk
+```
+
+EAS prints a download link for the `.apk` when the build finishes (free tier uses a public queue). Then install it on your phone (allow "install from unknown sources"). For a local build instead: `npx expo run:android` with Android Studio, or `npx expo prebuild -p android && cd android && ./gradlew assembleRelease`.
 
 ## Structure
 
