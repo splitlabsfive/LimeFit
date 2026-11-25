@@ -13,8 +13,8 @@ A dark-themed workout tracker for iOS / Android / web with a strong lime accent.
 ## Run locally
 
 ```bash
-npm install
-npm start          # then press w for web, or a for Android
+npm ci --legacy-peer-deps   # lockfile is pinned; plain npm install hits a peer conflict
+npm start                   # then press w for web, or a for Android
 npm run web
 npm run typecheck
 ```
